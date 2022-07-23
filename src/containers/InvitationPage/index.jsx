@@ -3,15 +3,19 @@ import _ from 'lodash';
 import Carousel from 'react-material-ui-carousel'
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
+import { isMobile } from 'react-device-detect';
 import 'react-slideshow-image/dist/styles.css'
 import 'sweetalert2/src/sweetalert2.scss';
 
 import icon1 from '../../static/images/1.png';
 import icon2 from '../../static/images/2.png';
 import icon3 from '../../static/images/3.png';
+import icon4 from '../../static/images/4.png';
+import ilustrationHand from '../../static/images/hand.png';
 import comproTitle from '../../static/images/compro.png';
 import productCompro from '../../static/images/product-compro.png';
 import mobileAppsTitle from '../../static/images/apps.png';
+import serviceTitle from '../../static/images/service.png';
 
 import {
   getTestimony,
@@ -204,7 +208,7 @@ const InvitationPage = () => {
         <div className={classes.leftSection}>
           <div className={classes.appDescWrapper}>
             <div className={classes.appsDesc}>
-              <img src={icon3} className={classes.icon} alt="icon" />
+              <img src={ (isMobile || width === 'sm' ) ? icon4 : icon3} className={classes.icon} alt="icon" />
               <p>
                 https://www.codelabs.co.id/website_content/index/64<br/>
                 https://www.ikatik.com/<br/>
@@ -224,6 +228,60 @@ const InvitationPage = () => {
     )
   }
 
+  const generateServiceSection = () => {
+    return (
+      <div className={classes.serviceContainer}>
+        <div className={classes.leftSide}>
+          <div className={classes.top}>
+            <img src={serviceTitle} className={classes.serviceTitle} alt="Servis Komputer" />
+            <img src={ilustrationHand} className={classes.ilustration} alt="ilustration" />
+            <div className={classes.topDesc}>
+              <p>
+                "Ketika kamu mengalami masalah, kami ada solusinya."<br />
+                Jasa Service :<br />
+                - Printer<br />
+                - Proyektor<br />
+                - Laptop
+              </p>
+            </div>
+          </div>
+          <div className={classes.laptopWrapper}>
+            <div className={classes.imgWrapper}>
+              <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658594092/catalog/Laptop_2_xtlw9w.webp" alt="laptop" />
+            </div>
+          </div>
+          <div className={classes.bottom}>
+            <p>Authorized Partner : Epson, Brother</p>
+          </div>
+        </div>
+        <div className={classes.mid}>
+          <div className={classes.imgWrapper}>
+            <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658595289/catalog/Projector_upmm56.webp" alt="projector" className={classes.projector} />
+            <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658595289/catalog/Printer_wbf2nw.webp" alt="printer" className={classes.printer} />
+          </div>
+        </div>
+        <div className={classes.right}>
+          <div className={classes.top}>
+            <div className={classes.background} />
+            <img className={classes.ilustration} src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658595289/catalog/HP_r7laib.webp" alt="ilustration" />
+          </div>
+          <div className={classes.bottom}>
+            <div className={classes.scopeDesc}>
+              <p>
+                Meliputi :<br/>
+                - Upgrade<br/>
+                - Perbaikan<br/>
+                - Penjualan spare part<br/>
+                - Kontrak Maintenance
+              </p>
+            </div>
+            <img className={classes.brand} src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658595289/catalog/brands_cbloew.webp" alt="brand" />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   const generateInvitation = () => {
     return (
       <div className={classes.invitationContainer}>
@@ -231,6 +289,7 @@ const InvitationPage = () => {
         {generateComproSection()}
         {generateComproSlideShow()}
         {generateMobileAppsDev()}
+        {generateServiceSection()}
         {/* <AudioComponent isPlaying={isPlaying} setIsPlaying={setIsPlaying} /> */}
       </div>
     );

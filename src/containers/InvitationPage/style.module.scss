@@ -60,7 +60,6 @@
             }
             .productCompro {
               margin-top: 5%;
-              // max-width: 490px;
               width: 50%;
               @include apply-at-sm-size {
                 width: 35%;
@@ -153,6 +152,8 @@
         flex-direction: column-reverse;
         width: 100%;
         align-items: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
       }
       .leftSection {
         width: 30%;
@@ -183,8 +184,8 @@
               font-size: 10px;
               margin: 0;
               margin-top: 10%;
-              padding: 2%;
-              margin-left: 5%;
+              padding: 2% 5%;
+              margin-left: 2%;
             }
             .icon {
               width: 20%;
@@ -192,6 +193,11 @@
               position: absolute;
               margin-left: -5%;
               z-index: 2;
+              @include apply-at-sm-size {
+                right: 0;
+                margin-top: -8%;
+                width: 37px;
+              }
             }
           }
         }
@@ -216,6 +222,7 @@
           @include apply-at-sm-size {
             justify-content: center;
             margin-bottom: 10%;
+            margin-top: 5%;
           }
           .mobileProduct {
             width: 20%;
@@ -224,6 +231,98 @@
           .desktopProduct {
             margin-top: 10%;
             width: 55%;
+          }
+        }
+      }
+    }
+    .serviceContainer {
+      @include directionX;
+      .leftSide {
+        width: 65%;
+        .top {
+          @include directionY;
+          background-color: $color-orange;
+          .serviceTitle {
+            width: 80%;
+            margin-top: 5%;
+            margin-left: 5%;
+          }
+          .ilustration {
+            width: 8%;
+          }
+          .topDesc {
+            @include directionX;
+            margin-top: -5%;
+            color: $color-black;
+            justify-content: center;
+            text-align: center;
+            line-height: 42px;
+          }
+        }
+        .laptopWrapper {
+          position: absolute;
+          img {
+            width: 30%;
+            margin-top: -15%;
+          }
+        }
+        .bottom {
+          @include directionX;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: $color-white;
+          background-color: $color-red;
+          height: 100px;
+          padding-left: 15%;
+        }
+      }
+      .mid {
+        .imgWrapper {
+          @include directionY;
+          position: absolute;
+          z-index: 2;
+          margin-left: -10%;
+          margin-top: 10%;
+          .projector {
+            width: 70%;
+          }
+          .printer {
+            margin-left: -20%;
+            width: 70%;
+          }
+        }
+      }
+      .right {
+        @include directionY;
+        width: 35%;
+        .top {
+          align-self: flex-end;
+          width: 70%;
+          margin-top: -5%;
+          .background {
+            height: 100px;
+            background-color: $color-red;
+          }
+          .ilustration {
+            width: 10%;
+            position: absolute;
+            margin-top: -10%;
+          }
+        }
+        .bottom {
+          @include directionY;
+          align-items: center;
+          margin-top: 10%;
+          background-color: $color-dark-blue;
+          padding-bottom: 5%;
+          .scopeDesc {
+            margin-left: 15%;
+            align-self: center;
+            line-height: 42px;
+          }
+          .brand {
+            width: 50%;
           }
         }
       }
