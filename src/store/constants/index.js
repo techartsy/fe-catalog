@@ -1,0 +1,3 @@
+export const GET_TESTIMONY = "GET_TESTIMONY";
+export const SET_TESTIMONY = "SET_TESTIMONY";
+export const POST_TESTIMONY = "POST_TESTIMONY";

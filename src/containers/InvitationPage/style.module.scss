@@ -1,0 +1,138 @@
+@import "../../styles/base";
+.container {
+  @include body;
+  overflow-x: hidden;
+  background-color: $color-white;
+  .invitationContainer {
+    .slideContainer {
+      .image {
+        width: 100%;
+        max-height: 650px;
+        object-fit: cover;
+      }
+    }
+    .comproSectionContainer {
+      margin-top: 10%;
+      margin-bottom: 10%;
+      @include directionX;
+      @include apply-at-md-size {
+        @include directionY;
+        align-items: center;
+      }
+      .leftSection {
+        padding: 2%;
+        background-color: $color-orange;
+        width: 60%;
+        .comproTitle {
+          max-width: 700px;
+        }
+        .productCompro {
+          margin-top: 5%;
+          max-width: 490px;
+        }
+      }
+      .rightSection {
+        margin-right: 7%;
+        margin-top: 5%;
+        width: 30%;
+        @include directionY;
+        .desktopIcon {
+          align-self: flex-end;
+          width: 30%;
+          margin-bottom: -2%;
+          margin-right: -5%;
+        }
+        .comproDesc {
+          margin-left: -60%;
+          padding: 2% 5%;
+          background-color: $color-dark-blue;
+          border-radius: 18px;
+          max-width: 600px;
+          line-height: 42px;
+        }
+        .icon1 {
+          width: 30%;
+          margin-left: -15%;
+          margin-bottom: -10%;
+        }
+      }
+    }
+    .comproSlideContainer {
+      .sliderWrapper {
+        @include directionX;
+        padding: 0 2%;
+        justify-content: space-between;
+        gap: 2%;
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        .image {
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          max-width: 500px;
+        }
+      }
+      .sliderWrapper::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .mobileAppsContainer {
+      @include directionX;
+      justify-content: space-between;
+      margin-top: 10%;
+      margin-bottom: 10%;
+      .leftSection {
+        width: 30%;
+        .appsDesc {
+          .icon {
+            width: 20%;
+            margin-top: -21%;
+            position: absolute;
+            margin-left: -10%;
+          }
+          position: absolute;
+          margin-top: 15%;
+          padding: 2%;
+          background-color: $color-orange;
+          border-radius: 25px;
+          left: 10%;
+          @include apply-at-sm-size {
+            font-size: 10px;
+          }
+        }
+      }
+      .rightSection {
+        @include directionY;
+        width: 70%;
+        background-color: $color-dark-blue;
+        padding: 2% 0 2% 2%;
+        .mobileTitle {
+          @include content-center;
+          width: 90%;
+        }
+        .productWrapper {
+          @include directionX;
+          margin-top: 2%;
+          justify-content: flex-end;
+          .mobileProduct {
+            width: 20%;
+            margin-bottom: 10%;
+          }
+          .desktopProduct {
+            margin-top: 10%;
+            width: 55%;
+
+          }
+        }
+      }
+    }
+    .my-swal {
+      z-index: 10000 !important;
+    }
+    .swal-overlay {
+      z-index: 100000000000 !important;
+    }
+    :host ::ng-deep .swal-overlay {
+      z-index: 30000000000 !important;
+    }
+  }
+}
