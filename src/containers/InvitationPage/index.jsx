@@ -39,11 +39,11 @@ const InvitationPage = () => {
     },
     {
       name: 'about us',
-      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1657649553/catalog/About_pb1tvt.webp'
+      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658587841/catalog/About-_1__zkaw3c.webp'
     },
     {
       name: 'contact us',
-      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1657813775/catalog/Contact-_1__nmhtwp.webp'
+      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658587843/catalog/Contact-_2__ppbeve.webp'
     },
   ]
 
@@ -59,6 +59,10 @@ const InvitationPage = () => {
     {
       name: 'item 3',
       imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1657810283/catalog/5-1_vtxqd9.webp',
+    },
+    {
+      name: 'item 4',
+      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658587640/catalog/c1_odp5zx.webp',
     },
   ]
 
@@ -152,8 +156,17 @@ const InvitationPage = () => {
     return (
       <div className={classes.comproSectionContainer}>
         <div className={classes.leftSection}>
-          <img src={comproTitle} className={classes.comproTitle} alt="Company Profile" />
-          <img src={productCompro} className={classes.productCompro} alt="Compro Product" />
+          <div className={classes.bgWrapper}>
+            <div className={classes.bg1} />
+            <div className={classes.bg2} />
+            <div className={classes.bg3} />
+          </div>
+          <div className={classes.wrapper}>
+            <div className={classes.detail}>
+              <img src={comproTitle} className={classes.comproTitle} alt="Company Profile" />
+              <img src={productCompro} className={classes.productCompro} alt="Compro Product" />
+            </div>
+          </div>
         </div>
         <div className={classes.rightSection}>
           <img src={icon2} className={classes.desktopIcon} alt="icon" />
@@ -189,20 +202,22 @@ const InvitationPage = () => {
     return (
       <div className={classes.mobileAppsContainer}>
         <div className={classes.leftSection}>
-          <div className={classes.appsDesc}>
-            <img src={icon3} className={classes.icon} alt="icon" />
-            <p>
-              https://www.codelabs.co.id/website_content/index/64<br/>
-              https://www.ikatik.com/<br/>
-              Bagi kamu yang memiliki bisnis, Jika ingin meningkatkan peluang<br/> menarik pelanggan, cobalah membuat hal inii
-            </p>
+          <div className={classes.appDescWrapper}>
+            <div className={classes.appsDesc}>
+              <img src={icon3} className={classes.icon} alt="icon" />
+              <p>
+                https://www.codelabs.co.id/website_content/index/64<br/>
+                https://www.ikatik.com/<br/>
+                Bagi kamu yang memiliki bisnis, Jika ingin meningkatkan peluang<br/> menarik pelanggan, cobalah membuat hal ini
+              </p>
+            </div>
           </div>
         </div>
         <div className={classes.rightSection}>
           <img className={classes.mobileTitle} src={mobileAppsTitle} alt="Mobile Apps Development" />
           <div className={classes.productWrapper}>
-            <img className={classes.mobileProduct} src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1657814010/catalog/Mobile_zcmy0u.webp" alt="Mobile" />
-            <img className={classes.desktopProduct} src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1657814011/catalog/Laptop_o46l4t.webp" alt="Desktop" />
+            <img className={classes.mobileProduct} src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658589334/catalog/Mobile-_1__ngk6tq.webp" alt="Mobile" />
+            <img className={classes.desktopProduct} src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658589333/catalog/Laptop-_1__lurblk.webp" alt="Desktop" />
           </div>
         </div>
       </div>

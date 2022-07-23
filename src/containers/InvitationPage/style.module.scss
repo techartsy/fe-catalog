@@ -15,20 +15,59 @@
       margin-top: 10%;
       margin-bottom: 10%;
       @include directionX;
+      position: relative;
       @include apply-at-md-size {
         @include directionY;
         align-items: center;
       }
+      @include apply-at-sm-size {
+        margin-top: 2%;
+      }
       .leftSection {
-        padding: 2%;
-        background-color: $color-orange;
         width: 60%;
-        .comproTitle {
-          max-width: 700px;
+        @include apply-at-sm-size {
+          width: 90%;
         }
-        .productCompro {
-          margin-top: 5%;
-          max-width: 490px;
+        .bgWrapper {
+          @include directionX;
+          height: 100%;
+          .bg1 {
+            width: 33%;
+            background-color: $color-orange;
+          }
+          .bg2 {
+            width: 33%;
+            background-color: $color-red;
+          }
+          .bg3 {
+            width: 33%;
+            background-color: $color-orange;
+          }
+        }
+        .wrapper {
+          .detail {
+            @include directionY;
+            z-index: 2;
+            position: absolute;
+            left: 2%;
+            top: 5%;
+            .comproTitle {
+              width: 75%;
+              @include apply-at-sm-size {
+                width: 60%;
+                margin-top: 1%;
+              }
+            }
+            .productCompro {
+              margin-top: 5%;
+              // max-width: 490px;
+              width: 50%;
+              @include apply-at-sm-size {
+                width: 35%;
+                margin-top: 1%;
+              }
+            }
+          }
         }
       }
       .rightSection {
@@ -36,11 +75,19 @@
         margin-top: 5%;
         width: 30%;
         @include directionY;
+        @include apply-at-sm-size {
+          width: 40%;
+          margin-right: 0;
+        }
         .desktopIcon {
           align-self: flex-end;
           width: 30%;
           margin-bottom: -2%;
           margin-right: -5%;
+          @include apply-at-sm-size {
+            width: 60%;
+            margin-right: 25%;
+          }
         }
         .comproDesc {
           margin-left: -60%;
@@ -49,11 +96,29 @@
           border-radius: 18px;
           max-width: 600px;
           line-height: 42px;
+          @include apply-at-sm-size {
+            font-size: 8px;
+            line-height: 10px;
+            text-align: center;
+            position: absolute;
+            top: 55%;
+            width: 55%;
+            right: 8%;
+            padding: 1%;
+            margin-left: -50%;
+            border-radius: 12px;
+          }
         }
         .icon1 {
           width: 30%;
           margin-left: -15%;
           margin-bottom: -10%;
+          @include apply-at-sm-size {
+            z-index: 2;
+            width: 35%;
+            align-self: flex-end;
+
+          }
         }
       }
     }
@@ -69,6 +134,9 @@
         .image {
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           max-width: 500px;
+          @include apply-at-sm-size {
+            width: 200px;
+          }
         }
       }
       .sliderWrapper::-webkit-scrollbar {
@@ -80,23 +148,51 @@
       justify-content: space-between;
       margin-top: 10%;
       margin-bottom: 10%;
+      @include apply-at-sm-size {
+        @include directionY;
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: center;
+      }
       .leftSection {
         width: 30%;
-        .appsDesc {
-          .icon {
-            width: 20%;
-            margin-top: -21%;
-            position: absolute;
-            margin-left: -10%;
-          }
+        @include directionY;
+        justify-content: center;
+        .appDescWrapper {
+          @include directionY;
+          justify-content: center;
+          width: 28%;
+          height: 80%;
           position: absolute;
-          margin-top: 15%;
-          padding: 2%;
-          background-color: $color-orange;
-          border-radius: 25px;
-          left: 10%;
           @include apply-at-sm-size {
-            font-size: 10px;
+            width: 100%;
+            position: static;
+            align-items: center;
+          }
+          .appsDesc {
+            margin-left: 20%;
+            font-size: 20px;
+            position: absolute;
+            margin-top: 15%;
+            padding: 5% 10%;
+            background-color: $color-orange;
+            border-radius: 25px;
+            left: 10%;
+            z-index: 2;
+            @include apply-at-sm-size {
+              font-size: 10px;
+              margin: 0;
+              margin-top: 10%;
+              padding: 2%;
+              margin-left: 5%;
+            }
+            .icon {
+              width: 20%;
+              margin-top: -20%;
+              position: absolute;
+              margin-left: -5%;
+              z-index: 2;
+            }
           }
         }
       }
@@ -105,6 +201,10 @@
         width: 70%;
         background-color: $color-dark-blue;
         padding: 2% 0 2% 2%;
+        @include apply-at-sm-size {
+          width: 80%;
+          align-items: center;
+        }
         .mobileTitle {
           @include content-center;
           width: 90%;
@@ -113,6 +213,10 @@
           @include directionX;
           margin-top: 2%;
           justify-content: flex-end;
+          @include apply-at-sm-size {
+            justify-content: center;
+            margin-bottom: 10%;
+          }
           .mobileProduct {
             width: 20%;
             margin-bottom: 10%;
@@ -120,7 +224,6 @@
           .desktopProduct {
             margin-top: 10%;
             width: 55%;
-
           }
         }
       }
