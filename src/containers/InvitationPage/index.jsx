@@ -76,6 +76,9 @@ const InvitationPage = () => {
   const ikatik = () => {
     window.open('https://ikatik.com/', '_blank');
   };
+  const ig = () => {
+    window.open('https://www.instagram.com/ikatik.upnvj_official/', '_blank');
+  };
   const techartsy = () => {
     window.open('https://www.techartsyindonesia.com/', '_blank');
   };
@@ -296,12 +299,30 @@ const InvitationPage = () => {
       <div className={classes.testimonyContainer}>
         <div className={classes.testimonyWrapper}>
           <div className={classes.background}>
-
+            <p className={classes.title}>Testimoni</p>
+            <div className={classes.testimonys}>
+              <div className={classes.profile}>
+                <img src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658640208/catalog/profile_lxv7hb.webp' />
+              </div>
+              <div className={classes.testimonyShape}>
+                <div className={classes.outerTriangle}>
+                  <div className={classes.innerTriangle} />
+                </div>
+                <div className={classes.messageBubble}>
+                  <div className={classes.name}>
+                    Nama / Instansi
+                  </div>
+                  <div className={classes.testimony}>
+                    Produknya Bagus Sekali
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const generateFooter = () => {
     return (
@@ -313,7 +334,8 @@ const InvitationPage = () => {
               <img className={classes.title} src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658592982/catalog/contactus_zmfuru.webp' />
               <div className={classes.contactUsDesc}>
                 <p className={classes.subtitle}>ikatik@upnvj.ac.id</p>
-                <p className={classes.subtitle}>0815 - 9001 - 890 (Darma Putri)</p>
+                <p className={classes.subtitle}>0815 - 9001 - 890 (Darma Patri)</p>
+                <p className={classes.subtitle}>0877 - 8927 - 1012 ( Dhapot )</p>
                 <p className={classes.subtitle}>https://www.ikatik.com/</p>
                 <p className={classes.subtitle}>Ikatan Alumni Informatika Dan Komputer</p>
               </div>
@@ -323,7 +345,9 @@ const InvitationPage = () => {
                 src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658593649/catalog/WA_w4qlon.webp' />
               <img className={classes.icon} onClick={ikatik}
                 src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658593710/catalog/LOGO_mgxkgm.webp' />
-              <a
+              <img className={classes.icon} onClick={ig}
+                src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658638144/catalog/Instagram_pxik2i.webp' />
+              <a className={classes.icons}
               href="mailto:ikatik@upnvj.ac.id"
               target="_blank"
               rel="noreferrer"

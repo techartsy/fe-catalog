@@ -336,6 +336,29 @@
     :host ::ng-deep .swal-overlay {
       z-index: 30000000000 !important;
     }
+    .testimonyContainer {
+      @include directionY;
+      .testimonyWrapper {
+        @include content-center;
+        width: 50%;
+        .background {
+
+          background-color: $color-dark-blue;
+          border-radius: 25px;
+          .title {
+            text-decoration: underline;
+            text-align: center;
+            padding-top: 4%;
+          }
+          .testimonys {
+            background-color: $color-orange;
+            border-radius: 25px;
+            padding: 5%;
+            // margin-right: 5%;
+          }
+        }
+      }
+    }
     .footerContainer {
       @include directionX;
       border-top: 50px solid $color-orange;
@@ -373,6 +396,7 @@
             .icon {
               cursor: pointer;
               width: 40px;
+              height: 40px;
             }
           }
         }
