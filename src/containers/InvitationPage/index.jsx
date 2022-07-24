@@ -70,6 +70,16 @@ const InvitationPage = () => {
     },
   ]
 
+  const wa = () => {
+    window.open('https://api.whatsapp.com/send?phone=628159001890', '_blank');
+  };
+  const ikatik = () => {
+    window.open('https://ikatik.com/', '_blank');
+  };
+  const techartsy = () => {
+    window.open('https://www.techartsyindonesia.com/', '_blank');
+  };
+
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -281,6 +291,70 @@ const InvitationPage = () => {
       </div>
     )
   }
+  const generateTestimony = () => {
+    return (
+      <div className={classes.testimonyContainer}>
+        <div className={classes.testimonyWrapper}>
+          <div className={classes.background}>
+
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  const generateFooter = () => {
+    return (
+      <div className={classes.footerContainer}>
+        <div className={classes.leftSection}>
+          <img className={classes.medsosIlustration} src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658592452/catalog/medsos_fgvkdv.webp' />
+          <div className={classes.contactUsWrpper}>
+            <div className={classes.contactUs}>
+              <img className={classes.title} src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658592982/catalog/contactus_zmfuru.webp' />
+              <div className={classes.contactUsDesc}>
+                <p className={classes.subtitle}>ikatik@upnvj.ac.id</p>
+                <p className={classes.subtitle}>0815 - 9001 - 890 (Darma Putri)</p>
+                <p className={classes.subtitle}>https://www.ikatik.com/</p>
+                <p className={classes.subtitle}>Ikatan Alumni Informatika Dan Komputer</p>
+              </div>
+            </div>
+            <div className={classes.iconClick}>
+              <img className={classes.icon} onClick={wa}
+                src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658593649/catalog/WA_w4qlon.webp' />
+              <img className={classes.icon} onClick={ikatik}
+                src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658593710/catalog/LOGO_mgxkgm.webp' />
+              <a
+              href="mailto:ikatik@upnvj.ac.id"
+              target="_blank"
+              rel="noreferrer"
+              >
+                <img className={classes.icon}
+                src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658593710/catalog/Mail_js5w6q.webp' />
+              </a>
+            </div>
+          </div>
+          <div className={classes.colaboration}>
+            <p className={classes.title}>In Colaboration</p>
+            <img className={classes.techartsy} onClick={techartsy}
+            src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658417366/Asset%20Techartsy%20Indonesia/Logo/Techartsy_Gold_af8szn.png' />
+          </div>
+        </div>
+        <div className={classes.rightSection}>
+          <div className={classes.maps}>
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5167166490132!2d106.8113054!3d-6.3270202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef3c9bb019b1%3A0xbe14abc25d2e3d55!2sStudio%20J76!5e0!3m2!1sid!2sid!4v1658594424051!5m2!1sid!2sid" 
+            width={width === 'lg' ? "540" : '320'}
+            height={width === 'lg' ? "500" : '300'}
+            style={{ border: "1px solid black" }}
+            allowFullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const generateInvitation = () => {
     return (
@@ -290,6 +364,8 @@ const InvitationPage = () => {
         {generateComproSlideShow()}
         {generateMobileAppsDev()}
         {generateServiceSection()}
+        {generateTestimony()}
+        {generateFooter()}
         {/* <AudioComponent isPlaying={isPlaying} setIsPlaying={setIsPlaying} /> */}
       </div>
     );
