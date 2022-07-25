@@ -16,6 +16,9 @@ import comproTitle from '../../static/images/compro.png';
 import productCompro from '../../static/images/product-compro.png';
 import mobileAppsTitle from '../../static/images/apps.png';
 import serviceTitle from '../../static/images/service.png';
+import designTitle from '../../static/images/design.png';
+import ilustrationDesignGraphics from '../../static/images/ilustration1.png';
+import ilustrationIcon from '../../static/images/ilustration2.png';
 
 import {
   getTestimony,
@@ -43,11 +46,11 @@ const InvitationPage = () => {
     },
     {
       name: 'about us',
-      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658587841/catalog/About-_1__zkaw3c.webp'
+      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658764098/catalog/About_2_sg0n1e.webp'
     },
     {
       name: 'contact us',
-      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658587843/catalog/Contact-_2__ppbeve.webp'
+      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658764098/catalog/Contact_3_euss3h.webp'
     },
   ]
 
@@ -73,12 +76,15 @@ const InvitationPage = () => {
   const wa = () => {
     window.open('https://api.whatsapp.com/send?phone=628159001890', '_blank');
   };
+
   const ikatik = () => {
     window.open('https://ikatik.com/', '_blank');
   };
+
   const ig = () => {
     window.open('https://www.instagram.com/ikatik.upnvj_official/', '_blank');
   };
+
   const techartsy = () => {
     window.open('https://www.techartsyindonesia.com/', '_blank');
   };
@@ -122,7 +128,7 @@ const InvitationPage = () => {
       duration: 1000,
       stopAutoPlayOnHover: false,
       swipe: true,
-    }
+    };
     return (
       <div className={classes.slideContainer}>
         <Carousel {...props}
@@ -166,7 +172,7 @@ const InvitationPage = () => {
           })}
         </Carousel>
       </div>
-    )
+    );
   };
 
   const generateComproSection = () => {
@@ -196,8 +202,8 @@ const InvitationPage = () => {
           <img src={icon1} className={classes.icon1} alt="icon" />
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const generateComproSlideShow = () => {
     return (
@@ -212,8 +218,8 @@ const InvitationPage = () => {
           })}
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const generateMobileAppsDev = () => {
     return (
@@ -238,8 +244,8 @@ const InvitationPage = () => {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const generateServiceSection = () => {
     return (
@@ -292,8 +298,145 @@ const InvitationPage = () => {
           </div>
         </div>
       </div>
+    );
+  };
+
+  const generateMobileServiceSection = () => {
+    return (
+      <div className={classes.mobileServiceContainer}>
+        <div className={classes.top}>
+          <div className={classes.left}>
+            <div className={classes.serviceTitleMobile}>
+              <img src={serviceTitle} alt="servis komputer" />
+            </div>
+            <div className={classes.ilustrationMobile}>
+              <img src={ilustrationHand} alt="Ilustration"  />
+            </div>
+            <div className={classes.descMobile}>
+              <p>
+                “Ketika kamu mengalami masalah, kami ada solusinya.”<br/>
+                Jasa Servis :<br/>
+                - Printer<br/>
+                - Proyektor<br/>
+                - Laptop
+              </p>
+            </div>
+            <div className={classes.laptopWrapper}>
+              <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658594092/catalog/Laptop_2_xtlw9w.webp" alt="laptop" />
+            </div>
+          </div>
+          <div className={classes.topMid}>
+            <div className={classes.imgWrapper}>
+              <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658595289/catalog/Projector_upmm56.webp" alt="projector" className={classes.projector} />
+            </div>
+          </div>
+          <div className={classes.topRight}>
+            <div className={classes.emptyColumn} />
+          </div>
+        </div>
+        <div className={classes.bottom}>
+          <div className={classes.bottomLeft}>
+            <div className={classes.bottomEmptyColumn} />
+          </div>
+          <div className={classes.bottomMid}>
+            <div className={classes.imgWrapper}>
+              <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658595289/catalog/Printer_wbf2nw.webp" alt="printer" className={classes.printer} />
+            </div>
+          </div>
+          <div className={classes.bottomRight}>
+            <div className={classes.left}>
+              <p>
+              Meliputi :<br/>
+              - Upgrade<br/>
+              - Perbaikan<br/>
+              - Perbaikan spare part<br/>
+              - Kontrak Maintenance
+              </p>
+            </div>
+            <div className={classes.right}>
+              <p>
+                Authorized Partner :<br/>
+                Epson, Brother
+              </p>
+              <img className={classes.brand} src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658595289/catalog/brands_cbloew.webp" alt="brand" />
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  };
+
+  const generateDesignGraphics = () => {
+    return (
+      <div className={classes.designGraphicsContainer}>
+        <div className={classes.leftSection}>
+          <div className={classes.designGraphicsTitle}>
+            <img src={designTitle} alt="Design Graphics" />
+          </div>
+          <div className={classes.leftIlustration}>
+            <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658671902/catalog/Illustration-IMG_up7trc.webp" alt="ilustration" />
+          </div>
+        </div>
+        <div className={classes.rightSection}>
+          <div className={classes.ilustrationWrapper}>
+            <img src={ilustrationDesignGraphics} alt="ilustration" />
+          </div>
+          <div className={classes.bottomSection}>
+            <div className={classes.designDesc}>
+              <p>
+                Kreatif tanpa perencanaan disebut -'seni'.<br/>
+                Kreatif dengan strategi disebut 'periklanan'.<br/>
+                Percayakan kepada kami IKATIK UPNVJ
+              </p>
+            </div>
+            {(width !== 'sm' || !isMobile) && <div className={classes.iconWrapper}>
+              <img src={ilustrationIcon} alt="ilustration" />
+            </div>}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const generateDesignGraphicsGallery = () => {
+    return (
+      <div className={classes.galleryDesignContainer}>
+        <div className={classes.imageWrapper}>
+          <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658763567/catalog/Group_12523_ls7ccx.webp" alt="Gallery" />
+        </div>
+      </div>
+    );
+  };
+
+  const generateDigitalMarketingSection = () => {
+    return (
+      <div className={classes.digitalMarketingContainer}>
+        <div className={classes.imageWrapper}>
+          <img src={(isMobile || width === 'sm') ?
+            "https://res.cloudinary.com/dwvzfit8v/image/upload/v1658653789/catalog/section_6_mobile_nlr7eb.webp"
+            :
+            "https://res.cloudinary.com/dwvzfit8v/image/upload/v1658653352/catalog/section_6_ytffxr.webp"} alt="Digital Marketing" />
+        </div>
+      </div>
+    )
+  };
+
+  const generatePartnershipSection = () => {
+    return (
+      <div className={classes.partnershipContainer}>
+        <div className={classes.imageWrapper}>
+          <img src={
+            (isMobile || width === 'sm') ?
+              "https://res.cloudinary.com/dwvzfit8v/image/upload/v1658764593/catalog/section_7_4_blnavp.webp"
+              :
+              "https://res.cloudinary.com/dwvzfit8v/image/upload/v1658764355/catalog/section_7_3_qz5pcz.webp"
+            }
+            alt="Product Partnership" />
+        </div>
+      </div>
     )
   }
+
   const generateTestimony = () => {
     return (
       <div className={classes.testimonyContainer}>
@@ -328,10 +471,10 @@ const InvitationPage = () => {
     return (
       <div className={classes.footerContainer}>
         <div className={classes.leftSection}>
-          <img className={classes.medsosIlustration} src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658592452/catalog/medsos_fgvkdv.webp' />
+          <img className={classes.medsosIlustration} alt="medsos" src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658592452/catalog/medsos_fgvkdv.webp' />
           <div className={classes.contactUsWrpper}>
             <div className={classes.contactUs}>
-              <img className={classes.title} src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658592982/catalog/contactus_zmfuru.webp' />
+              <img className={classes.title} src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658592982/catalog/contactus_zmfuru.webp' alt="contact us" />
               <div className={classes.contactUsDesc}>
                 <p className={classes.subtitle}>ikatik@upnvj.ac.id</p>
                 <p className={classes.subtitle}>0815 - 9001 - 890 (Darma Patri)</p>
@@ -341,38 +484,38 @@ const InvitationPage = () => {
               </div>
             </div>
             <div className={classes.iconClick}>
-              <img className={classes.icon} onClick={wa}
+              <img alt="whatsapp" className={classes.icon} onClick={wa}
                 src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658593649/catalog/WA_w4qlon.webp' />
-              <img className={classes.icon} onClick={ikatik}
+              <img alt="ikatik" className={classes.icon} onClick={ikatik}
                 src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658593710/catalog/LOGO_mgxkgm.webp' />
-              <img className={classes.icon} onClick={ig}
+              <img alt="instagram" className={classes.icon} onClick={ig}
                 src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658638144/catalog/Instagram_pxik2i.webp' />
               <a className={classes.icons}
               href="mailto:ikatik@upnvj.ac.id"
               target="_blank"
               rel="noreferrer"
               >
-                <img className={classes.icon}
+                <img alt="email" className={classes.icon}
                 src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658593710/catalog/Mail_js5w6q.webp' />
               </a>
             </div>
           </div>
           <div className={classes.colaboration}>
             <p className={classes.title}>In Colaboration</p>
-            <img className={classes.techartsy} onClick={techartsy}
+            <img alt="Techartsy Indonesia" className={classes.techartsy} onClick={techartsy}
             src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658417366/Asset%20Techartsy%20Indonesia/Logo/Techartsy_Gold_af8szn.png' />
           </div>
         </div>
         <div className={classes.rightSection}>
           <div className={classes.maps}>
             <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5167166490132!2d106.8113054!3d-6.3270202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef3c9bb019b1%3A0xbe14abc25d2e3d55!2sStudio%20J76!5e0!3m2!1sid!2sid!4v1658594424051!5m2!1sid!2sid" 
-            width={width === 'lg' ? "540" : '320'}
-            height={width === 'lg' ? "500" : '300'}
-            style={{ border: "1px solid black" }}
-            allowFullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5167166490132!2d106.8113054!3d-6.3270202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef3c9bb019b1%3A0xbe14abc25d2e3d55!2sStudio%20J76!5e0!3m2!1sid!2sid!4v1658594424051!5m2!1sid!2sid" 
+              width={width === 'lg' ? "540" : '200'}
+              height={width === 'lg' ? "500" : '200'}
+              style={{ border: "1px solid black" }}
+              allowFullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
         </div>
@@ -387,7 +530,11 @@ const InvitationPage = () => {
         {generateComproSection()}
         {generateComproSlideShow()}
         {generateMobileAppsDev()}
-        {generateServiceSection()}
+        {(isMobile || width === 'sm') ? generateMobileServiceSection() : generateServiceSection()}
+        {generateDesignGraphics()}
+        {generateDesignGraphicsGallery()}
+        {generateDigitalMarketingSection()}
+        {generatePartnershipSection()}
         {generateTestimony()}
         {generateFooter()}
         {/* <AudioComponent isPlaying={isPlaying} setIsPlaying={setIsPlaying} /> */}
