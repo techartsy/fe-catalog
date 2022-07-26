@@ -30,7 +30,6 @@ import {
 } from '../../store/actions';
 
 import useWindowDimensions from '../../utils/useWindowDimensions';
-import StartedComponent from '../../components/Started';
 import AudioComponent from '../../components/AudioPlayer';
 
 import classes from './style.module.scss';
@@ -720,7 +719,6 @@ const CatalogPage = () => {
 
   return (
     <div className={classes.container}>
-      {/* {!isInvitationOpen ? <StartedComponent openInvitation={openInvitation} /> : generateCatalog()} */}
       {generateCatalog()}
     </div>
   );
