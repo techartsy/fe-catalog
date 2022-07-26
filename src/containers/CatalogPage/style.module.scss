@@ -56,16 +56,17 @@
             .comproTitle {
               width: 75%;
               @include apply-at-sm-size {
-                width: 60%;
+                width: 90%;
                 margin-top: 1%;
+                margin-left: 5%;
               }
             }
             .productCompro {
               margin-top: 5%;
-              width: 50%;
+              width: 60%;
               @include apply-at-sm-size {
-                width: 35%;
-                margin-top: 1%;
+                width: 50%;
+                margin-top: 5%;
               }
             }
           }
@@ -161,6 +162,7 @@
         width: 30%;
         @include directionY;
         justify-content: center;
+        z-index: 3;
         .appDescWrapper {
           @include directionY;
           justify-content: center;
@@ -171,6 +173,7 @@
             width: 100%;
             position: static;
             align-items: center;
+            border: 1px solid red;
           }
           .appsDesc {
             margin-left: 20%;
@@ -185,9 +188,9 @@
             @include apply-at-sm-size {
               font-size: 10px;
               margin: 0;
-              margin-top: 10%;
-              padding: 2% 5%;
-              margin-left: 2%;
+              margin-top: 25%;
+              padding: 2% 10%;
+              margin-left: -50%;
             }
             .icon {
               width: 20%;
@@ -263,6 +266,7 @@
         }
         .laptopWrapper {
           position: absolute;
+          z-index: 2;
           img {
             width: 30%;
             margin-top: -15%;
@@ -290,7 +294,7 @@
             width: 70%;
           }
           .printer {
-            margin-left: -20%;
+            margin-left: -25%;
             width: 70%;
           }
         }
@@ -307,9 +311,9 @@
             background-color: $color-red;
           }
           .ilustration {
-            width: 10%;
+            width: 30%;
             position: absolute;
-            margin-top: -10%;
+            margin-top: -35%;
           }
         }
         .bottom {
