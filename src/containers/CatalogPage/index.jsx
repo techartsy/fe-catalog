@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
 import Carousel from 'react-material-ui-carousel'
 import { useDispatch, useSelector } from 'react-redux';
-import Swal from 'sweetalert2';
 import { isMobile } from 'react-device-detect';
+import Alert from '@mui/material/Alert';
 import 'react-slideshow-image/dist/styles.css'
 import 'sweetalert2/src/sweetalert2.scss';
 
@@ -31,11 +31,29 @@ import AudioComponent from '../../components/AudioPlayer';
 
 import classes from './style.module.scss';
 
-const InvitationPage = () => {
+const CatalogPage = () => {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [name, setName] = useState('');
+  const [info, setInfo] = useState('');
+  const [institution, setInstitution] = useState('');
+  const [message, setMessage] = useState('');
+  const [errorAlert, setErrorAlert] = useState(false);
+  const [successAlert, setSuccessAlert] = useState(false);
   const dispatch = useDispatch();
   const { width } = useWindowDimensions();
+
+  useEffect(() => {
+    if (successAlert) {
+      setTimeout(() => {
+        setSuccessAlert(false)
+      }, 3000);
+    } else {
+      setTimeout(() => {
+        setErrorAlert(false)
+      }, 3000);
+    }
+  }, [errorAlert, successAlert])
   
   const responseTestimony = useSelector(state => state.catalogReducer.responseTestimony);
 
@@ -89,32 +107,33 @@ const InvitationPage = () => {
     window.open('https://www.techartsyindonesia.com/', '_blank');
   };
 
-  const Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-  });
-
   useEffect(() => {
     dispatch(getTestimony());
   }, []);
 
-  const sendTestimony = () => {
+  const resetForm = () => {
+    setName('');
+    setInfo('');
+    setInstitution('');
+    setMessage('');
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const payload = {
-      name: 'cobaaa',
-      message: 'coba kirim testimony FE',
-      info: 'Depok',
-      institution: 'Techartsy Indonesia',
-      pauseOnHover: false,
-      arrows: false,
-    }
-    dispatch(postTestimony(payload))
+      name,
+      info,
+      institution,
+      message,
+    };
+    dispatch(postTestimony(
+      payload,
+      () => setErrorAlert(true),
+      () => {
+        setSuccessAlert(true);
+        resetForm();
+      }
+    ));
   };
 
   const openInvitation = () => {
@@ -437,28 +456,62 @@ const InvitationPage = () => {
     )
   }
 
+  const generateTestimonyForm = () => {
+    return (
+      <div className={classes.testimonyFormSection}>
+        <div className={classes.testimonyTitle}>
+          <p>Testimoni Pelanggan</p>
+        </div>
+        <div className={classes.formContainer}>
+            <form className={classes.formWrapper} onSubmit={handleSubmit}>
+              <input type='text' value={name} placeholder='Nama' required onChange={(e) => setName(e.target.value)} />
+              <input type='text' value={info} placeholder='Alamat / No. Telepon' required onChange={(e) => setInfo(e.target.value)} />
+              <input type='text' value={institution} placeholder='Instansi' required onChange={(e) => setInstitution(e.target.value)} />
+              <div className={classes.bottomForm}>
+                <textarea type='text' placeholder='Pesan' value={message} required onChange={(e) => setMessage(e.target.value)} />
+              <button className={classes.btnSubmit} type='submit'>Kirim</button>
+              </div>
+            </form>
+            <div className={classes.formIlustration}>
+              <div className={classes.ilustrationWrapper}>
+                <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658771851/catalog/Group_12497_oqmaou.webp" alt="ilustration" />
+              </div>
+            </div>
+        </div>
+      </div>
+    )
+  }
+
   const generateTestimony = () => {
     return (
       <div className={classes.testimonyContainer}>
         <div className={classes.testimonyWrapper}>
           <div className={classes.background}>
             <p className={classes.title}>Testimoni</p>
-            <div className={classes.testimonys}>
-              <div className={classes.profile}>
-                <img src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658640208/catalog/profile_lxv7hb.webp' />
-              </div>
-              <div className={classes.testimonyShape}>
-                <div className={classes.outerTriangle}>
-                  <div className={classes.innerTriangle} />
-                </div>
-                <div className={classes.messageBubble}>
-                  <div className={classes.name}>
-                    Nama / Instansi
-                  </div>
-                  <div className={classes.testimony}>
-                    Produknya Bagus Sekali
-                  </div>
-                </div>
+            <div className={classes.testimonyListWrapper}>
+              <div className={classes.testimonyList}>
+                {responseTestimony && responseTestimony.map((testimony, idx) => {
+                  return (
+                    <div className={classes.messageItemWrapper} key={idx}>
+                        <div className={classes.avatar}>
+                          <img src="https://res.cloudinary.com/dwvzfit8v/image/upload/v1658640208/catalog/profile_lxv7hb.webp" alt='avatar' />
+                        </div>
+                        <div className={classes.messageShape}>
+                          <div className={classes.outerTriangle}>
+                            <div className={classes.innerTriangle} />
+                          </div>
+                          <div className={classes.messageBubble}>
+                            <div className={classes.name}>
+                              {testimony.name} || {testimony.institution}
+                            </div>
+                            <div className={classes.message}>
+                              {testimony.message}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  )
+                })}
               </div>
             </div>
           </div>
@@ -479,7 +532,7 @@ const InvitationPage = () => {
                 <p className={classes.subtitle}>ikatik@upnvj.ac.id</p>
                 <p className={classes.subtitle}>0815 - 9001 - 890 (Darma Patri)</p>
                 <p className={classes.subtitle}>0877 - 8927 - 1012 ( Dhapot )</p>
-                <p className={classes.subtitle}>https://www.ikatik.com/</p>
+                <p className={classes.subtitle} onClick={ikatik}>https://www.ikatik.com/</p>
                 <p className={classes.subtitle}>Ikatan Alumni Informatika Dan Komputer</p>
               </div>
             </div>
@@ -491,9 +544,9 @@ const InvitationPage = () => {
               <img alt="instagram" className={classes.icon} onClick={ig}
                 src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658638144/catalog/Instagram_pxik2i.webp' />
               <a className={classes.icons}
-              href="mailto:ikatik@upnvj.ac.id"
-              target="_blank"
-              rel="noreferrer"
+                href="mailto:ikatik@upnvj.ac.id"
+                target="_blank"
+                rel="noreferrer"
               >
                 <img alt="email" className={classes.icon}
                 src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658593710/catalog/Mail_js5w6q.webp' />
@@ -501,7 +554,7 @@ const InvitationPage = () => {
             </div>
           </div>
           <div className={classes.colaboration}>
-            <p className={classes.title}>In Colaboration</p>
+            <p className={classes.title}><em>In Colaboration</em></p>
             <img alt="Techartsy Indonesia" className={classes.techartsy} onClick={techartsy}
             src='https://res.cloudinary.com/dwvzfit8v/image/upload/v1658417366/Asset%20Techartsy%20Indonesia/Logo/Techartsy_Gold_af8szn.png' />
           </div>
@@ -523,9 +576,37 @@ const InvitationPage = () => {
     );
   };
 
-  const generateInvitation = () => {
+  const generateCatalog = () => {
     return (
-      <div className={classes.invitationContainer}>
+      <div className={classes.catalogContainer}>
+        {
+          errorAlert &&
+          <Alert
+            severity="error"
+            style={{
+              position: 'fixed',
+              zIndex: 5,
+              marginTop: (isMobile || width === 'sm') ? '7%' : '2%',
+              left: (isMobile || width === 'sm') ? 10 : '35%',
+              right: (isMobile || width === 'sm') && 10,
+              width: (isMobile || width === 'sm') ? '85%' : '30%'}}>
+            Terjadi kesalahan pada sistem, silakan coba lagi.
+          </Alert>
+        }
+        {
+          successAlert &&
+          <Alert
+            severity="success"
+            style={{
+              position: 'fixed',
+              zIndex: 5,
+              marginTop: (isMobile || width === 'sm') ? '7%' : '2%',
+              left: (isMobile || width === 'sm') ? 10 : '35%',
+              right: (isMobile || width === 'sm') && 10,
+              width: (isMobile || width === 'sm') ? '85%' : '30%'}}>
+            Testimoni Anda berhasil terkirim
+          </Alert>
+        }
         {generateSlideShow()}
         {generateComproSection()}
         {generateComproSlideShow()}
@@ -535,6 +616,7 @@ const InvitationPage = () => {
         {generateDesignGraphicsGallery()}
         {generateDigitalMarketingSection()}
         {generatePartnershipSection()}
+        {generateTestimonyForm()}
         {generateTestimony()}
         {generateFooter()}
         {/* <AudioComponent isPlaying={isPlaying} setIsPlaying={setIsPlaying} /> */}
@@ -544,10 +626,10 @@ const InvitationPage = () => {
 
   return (
     <div className={classes.container}>
-      {/* {!isInvitationOpen ? <StartedComponent openInvitation={openInvitation} /> : generateInvitation()} */}
-      {generateInvitation()}
+      {/* {!isInvitationOpen ? <StartedComponent openInvitation={openInvitation} /> : generateCatalog()} */}
+      {generateCatalog()}
     </div>
   );
 };
 
-export default InvitationPage;
+export default CatalogPage;

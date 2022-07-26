@@ -3,10 +3,9 @@
   @include body;
   background-color: $color-white;
   @include apply-at-sm-size {
-    
     overflow-x: hidden;
   }
-  .invitationContainer {
+  .catalogContainer {
     .slideContainer {
       .image {
         width: 100%;
@@ -551,33 +550,278 @@
         }
       }
     }
+    .testimonyFormSection {
+      @include directionY;
+      @include content-center;
+      width: 90%;
+      background-color: $color-red;
+      border-radius: 150px;
+      padding: 5% 2%;
+      margin-top: 10%;
+      @include apply-at-sm-size {
+        border-radius: 50px;
+      }
+      .testimonyTitle {
+        @include content-center;
+        background-color: $color-dark-blue;
+        border-radius: 18px;
+        text-align: center;
+        color: $color-cream;
+        letter-spacing: 0.1em;
+        width: 20%;
+        font-size: 18px;
+        text-decoration-line: underline;
+        text-underline-offset: 8px;
+        @include apply-at-sm-size {
+          width: 50%;
+          font-size: 14px;
+        }
+      }
+      .formContainer {
+        @include directionX;
+        padding: 5% 2%;
+        .formWrapper {
+          @include directionY;
+          width: 70%;
+          
+          input {
+            @include body;
+            margin-bottom: 5%;
+            height: 50px;
+            border-radius: 18px;
+            padding-left: 5%;
+            border: none;
+            background-color: $color-dark-blue;
+            @include apply-at-sm-size {
+              font-size: 12px;
+              height: 35px;
+            }
+          }
+          
+          ::-webkit-input-placeholder {
+            color: $color-white;
+            letter-spacing: 0.1em;
+          }
+          input:focus {
+            outline: none !important;
+            border-color: $color-orange;
+            box-shadow: 0 0 8px $color-orange;
+          }
+          .bottomForm {
+            @include directionX;
+            justify-content: space-between;
+            width: 140%;
+            textarea {
+              @include body;
+              height: 70px;
+              width: 63%;
+              border-radius: 18px;
+              border: none;
+              padding: 2% 4%;
+              background-color: $color-dark-blue;
+              @include apply-at-sm-size {
+                padding: 5%;
+                width: 62%;
+                font-size: 12px;
+              }
+            }
+            textarea:focus {
+              outline: none !important;
+              border-color: $color-orange;
+              box-shadow: 0 0 8px $color-orange;
+            }
+            ::-webkit-input-placeholder {
+              color: $color-white;
+              letter-spacing: 0.1em;
+            }
+            .btnSubmit {
+              align-self: flex-end;
+              border-radius: 18px;
+              background-color: $color-dark-blue;
+              letter-spacing: 0.1em;
+              color: $color-white;
+              border: none;
+              width: 20%;
+              height: 50px;
+              text-align: center;
+              z-index: 1;
+              @include apply-at-sm-size {
+                padding: 0 4%;
+                height: 32px;
+                font-size: 12px;
+                border-radius: 14px;
+              }
+            }
+            .btnSubmit:hover {
+              cursor: pointer;
+
+            }
+          }
+        }
+        .formIlustration {
+          width: 30%;
+          .ilustrationWrapper {
+            width: 100%;
+            margin-top: -30%;
+            @include apply-at-sm-size {
+              margin-top: -15%;
+            }
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
     .testimonyContainer {
       @include directionY;
+      margin-bottom: 20%;
+      margin-top: 5%;
       .testimonyWrapper {
         @include content-center;
-        width: 50%;
+        width: 65%;
+        @include apply-at-sm-size {
+          width: 80%;
+        }
         .background {
-
           background-color: $color-dark-blue;
           border-radius: 25px;
+          height: 500px;
           .title {
             text-decoration: underline;
             text-align: center;
             padding-top: 4%;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            @include apply-at-sm-size {
+              font-size: 14px;
+            }
           }
           .testimonys {
             background-color: $color-orange;
             border-radius: 25px;
             padding: 5%;
           }
+          .testimonyListWrapper {
+            position: absolute;
+            background-color: $color-orange;
+            padding: 4%;
+            margin-left: -10%;
+            width: 60%;
+            border-radius: 25px;
+            @include apply-at-sm-size {
+              width: 70%;
+              margin-left: -5%;
+            }
+            .testimonyList {
+              overflow-y: scroll;
+              height: 500px;
+              &::-webkit-scrollbar {
+                width: 5px;
+              }
+              &::-webkit-scrollbar-thumb {
+                height: 10px;
+                background: $color-red;
+                border-radius: 20px;
+              }
+              @include apply-at-sm-size {
+                height: 450px;
+              }
+              .messageItemWrapper {
+                @include directionX;
+                align-items: center;
+                color: $color-black;
+                height: auto;
+                @include apply-at-sm-size {
+                  width: 100%;
+                }
+                .avatar {
+                  @include directionX;
+                  border-radius: 50%;
+                  margin: auto;
+                  @include apply-at-sm-size {
+                    margin: 0;
+                    width: 25%;
+                  }
+                  img {
+                    width: 100%;
+                    @include apply-at-sm-size {
+                      align-items: center;
+                      width: 90%;
+                      margin-right: 5px;
+                    }
+                  }
+                }
+                .messageShape {
+                  @include directionX;
+                  width: 95%;
+                  align-items: center;
+                  padding-left: 1.5rem;
+                  @include apply-at-sm-size {
+                    font-size: 10px;
+                    padding: 0;
+                    width: 100%;
+                  }
+                  .outerTriangle {
+                    width: 0;
+                    height: 0;
+                    border-top: 23px solid transparent;
+                    border-bottom: 23px solid transparent;
+                    border-right: 23px solid $color-white;
+                    
+                    .innerTriangle {
+                      position: relative;
+                      top: -20px;
+                      left: 2px;
+                      width: 0;
+                      height: 0;
+                      border-top: 20px solid transparent;
+                      border-bottom: 20px solid transparent;
+                      border-right: 20px solid $color-white;
+                    }
+                  }
+                  .messageBubble {
+                    margin: 1rem;
+                    background-color: $color-white;
+                    color: $color-dark-blue;
+                    border: 1px solid $color-white;
+                    border-radius: 6px;
+                    text-align: left;
+                    padding: 20px;
+                    width: 100%;
+                    margin-left: -5px;
+                    .name {
+                      font-size: 17px;
+                      margin-bottom: 1.5%;
+                      @include apply-at-sm-size {
+                        margin-bottom: 0.5rem;
+                        font-size: 12px;
+                      }
+                    }
+                    .message {
+                      font-size: 15px;
+                      @include apply-at-sm-size {
+                        font-size: 10px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
     .footerContainer {
       @include directionX;
+      margin-top: 5%;
       border-top: 50px solid $color-orange;
       border-bottom: 50px solid $color-orange;
       background-color: $color-dark-blue;
+      @include apply-at-sm-size {
+        border-top: 25px solid $color-orange;
+        border-bottom: 25px solid $color-orange;
+      }
       .leftSection {
         @include directionY;
         align-items: center;
@@ -585,20 +829,30 @@
         padding: 5% 0%;
         .medsosIlustration {
           width: 20%;
+          @include apply-at-sm-size {
+            width: 40%;
+          }
         }
         .contactUsWrpper {
           .contactUs {
             @include directionY;
             align-items: center;
+            font-size: 19px;
+            @include apply-at-sm-size {
+              font-size: 8px;
+              line-height: 1px;
+            }
             .title {
               margin-top: 10%;
               width: 24%;
+              @include apply-at-sm-size {
+                width: 60%;
+              }
             }
             .contactUsDesc {
               text-align: center;
               padding: 2% 0% 5% 0%;
               .subtitle {
-                font-size: 19px;
                 margin: 14px;
               }
             }
@@ -611,19 +865,40 @@
               cursor: pointer;
               width: 40px;
               height: 40px;
+              @include apply-at-sm-size {
+                width: 25px;
+                height: 25px;
+              }
+            }
+            .icons {
+              .icon {
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                @include apply-at-sm-size {
+                  width: 25px;
+                  height: 25px;
+                }
+              }
             }
           }
         }
         .colaboration {
           text-align: center;
           margin: 0;
+          font-size: 19px;
+          @include apply-at-sm-size {
+            font-size: 10px;
+          }
           .title {
-            font-size: 19px;
             margin-bottom: 10px;
           }
           .techartsy {
             cursor: pointer;
             width: 20%;
+            @include apply-at-sm-size {
+              width: 50%;
+            }
           }
         }
       }
@@ -631,7 +906,15 @@
         width: 50%;
         padding: 5% 0%;
         @include directionY;
+        @include apply-at-sm-size {
+          width: 55%;
+          padding-right: 2%;
+        }
         .maps {
+          @include apply-at-sm-size {
+            @include directionY;
+            justify-content: center;
+          }
           width: 100%;
           height: 100%;
         }
