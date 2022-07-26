@@ -37,7 +37,7 @@ import classes from './style.module.scss';
 
 const CatalogPage = () => {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [name, setName] = useState('');
   const [info, setInfo] = useState('');
   const [institution, setInstitution] = useState('');
@@ -713,7 +713,7 @@ const CatalogPage = () => {
         {generateTestimonyForm()}
         {generateTestimony()}
         {generateFooter()}
-        {/* <AudioComponent isPlaying={isPlaying} setIsPlaying={setIsPlaying} /> */}
+        <AudioComponent isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
       </div>
     );
   };
