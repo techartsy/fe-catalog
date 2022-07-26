@@ -7,10 +7,10 @@ import Alert from '@mui/material/Alert';
 import Fade from 'react-reveal/Fade';
 import Flip from 'react-reveal/Flip';
 import Roll from 'react-reveal/Roll';
+import Zoom from 'react-reveal/Zoom';
 import 'react-slideshow-image/dist/styles.css'
 import 'sweetalert2/src/sweetalert2.scss';
 
-import Zoom from 'react-reveal/Zoom';
 import icon1 from '../../static/images/1.png';
 import icon2 from '../../static/images/2.png';
 import icon3 from '../../static/images/3.png';
@@ -23,6 +23,7 @@ import serviceTitle from '../../static/images/service.png';
 import designTitle from '../../static/images/design.png';
 import ilustrationDesignGraphics from '../../static/images/ilustration1.png';
 import ilustrationIcon from '../../static/images/ilustration2.png';
+import Popup from '../../components/Popup';
 
 import {
   getTestimony,
@@ -36,15 +37,17 @@ import classes from './style.module.scss';
 
 const CatalogPage = () => {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [name, setName] = useState('');
   const [info, setInfo] = useState('');
   const [institution, setInstitution] = useState('');
   const [message, setMessage] = useState('');
   const [errorAlert, setErrorAlert] = useState(false);
   const [successAlert, setSuccessAlert] = useState(false);
+  const [popupShow, setPopupShow] = useState(true);
   const dispatch = useDispatch();
   const { width } = useWindowDimensions();
+  let count = 0;
 
   useEffect(() => {
     if (successAlert) {
@@ -140,7 +143,7 @@ const CatalogPage = () => {
   };
 
   const openInvitation = () => {
-    setIsInvitationOpen(!isInvitationOpen);
+    setPopupShow(!popupShow);
     setIsPlaying(!isPlaying);
   };
 
@@ -534,7 +537,7 @@ const CatalogPage = () => {
                 <Fade duration={2000} delay={1900}>
                   <div className={classes.bottomForm}>
                     <textarea type='text' placeholder='Pesan' value={message} required onChange={(e) => setMessage(e.target.value)} />
-                  <button className={classes.btnSubmit} type='submit'>Kirim</button>
+                    <button className={classes.btnSubmit} type='submit'>Kirim</button>
                   </div>
                 </Fade>
               </form>
@@ -712,6 +715,7 @@ const CatalogPage = () => {
         {generateTestimonyForm()}
         {generateTestimony()}
         {generateFooter()}
+        <Popup show={popupShow} handleClose={openInvitation}/>
         <AudioComponent isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
       </div>
     );
