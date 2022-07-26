@@ -1,0 +1,116 @@
+@import '../../styles/base';
+
+.overlayX {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: rgba(38, 39, 40, 0.831);
+}
+.popupRegister {
+  position: fixed;
+  top: 10%;
+  left: 35%;
+  width: 320px;
+  height: 290px;
+  border-radius: 10px;
+  z-index: 20;
+  padding: 2%;
+  background-color: transparent;
+  img {
+    width: 95%;
+    display: flex;
+    margin: auto;
+    @include content-center;
+  }
+  @include apply-at-sm-size {
+    top: 30%;
+    left: 8%;
+  }
+  .btnSubmit {
+    @include directionY;
+    @include content-center;
+    justify-content: center;
+    border-radius: 18px;
+    background-color: $color-dark-blue;
+    letter-spacing: 0.1em;
+    color: $color-white;
+    border: none;
+    width: 40%;
+    height: 50px;
+    text-align: center;
+    z-index: 1;
+    margin-top: 5%;
+    cursor: pointer;
+    @include apply-at-sm-size {
+      padding: 0 4%;
+      height: 32px;
+      font-size: 12px;
+      border-radius: 14px;
+      width: 20%;
+    }
+  }
+}
+.btn {
+  display: flex;
+  @include content-center;
+  width: 82%;
+  height: 35px;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  .btnRegister {
+    width: 100%;
+    display: flex;
+    @include content-center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: $color-white;
+    background-color: $color-dark-blue;
+    cursor: pointer;
+  }
+}
+span {
+  font-size: 16px;
+  margin-left: 14%;
+  strong {
+    cursor: pointer;
+  }
+}
+
+// .overlayX {
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   bottom: 0;
+//   background-color: $color-dark-blue;
+// }
+.btn {
+  display: flex;
+  @include content-center;
+  width: 82%;
+  height: 35px;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  .btnRegister {
+    width: 100%;
+    display: flex;
+    @include content-center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: $color-white;
+    background-color: $color-dark-blue;
+    cursor: pointer;
+  }
+}
+span {
+  font-size: 16px;
+  margin-left: 10%;
+  strong {
+    cursor: pointer;
+  }
+}
