@@ -14,7 +14,7 @@ import 'sweetalert2/src/sweetalert2.scss';
 import icon1 from '../../static/images/1.png';
 import icon2 from '../../static/images/2.png';
 import icon3 from '../../static/images/3.png';
-    import productCompro from '../../static/images/product-compro.png';
+import productCompro from '../../static/images/product-compro.png';
 import icon4 from '../../static/images/4.png';
 import ilustrationHand from '../../static/images/hand.png';
 import comproTitle from '../../static/images/compro.png';
