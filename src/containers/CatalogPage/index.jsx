@@ -70,11 +70,11 @@ const CatalogPage = () => {
     },
     {
       name: 'about us',
-      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658764098/catalog/About_2_sg0n1e.webp'
+      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658909127/catalog/About_tn5ima.webp'
     },
     {
       name: 'contact us',
-      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658764098/catalog/Contact_3_euss3h.webp'
+      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658909128/catalog/Contact_usyxsa.webp'
     },
   ]
 
