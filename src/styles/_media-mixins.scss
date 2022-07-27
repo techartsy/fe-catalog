@@ -44,8 +44,7 @@ USAGE:
 // MD - Tablet Screens maximum screen width
 // LG - Large Screens - Desktop screen widths
 
-$screen-xsm-limit: 320px;
-
+$screen-xsm-limit: 380px;
 $screen-sm-limit: 767px;
 $screen-md-limit: 1000px;
 
@@ -63,7 +62,11 @@ $screen-1270-limit: 1270px;
     @content;
   }
 }
-
+@mixin apply-at-xsm-sm-size {
+  @media (min-width: $screen-xsm-limit + 1) and (max-width: $screen-sm-limit) {
+    @content;
+  }
+}   
 @mixin apply-at-sm-size {
   @media (max-width: $screen-sm-limit) {
     @content;

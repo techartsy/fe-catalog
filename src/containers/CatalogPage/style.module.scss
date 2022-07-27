@@ -55,7 +55,10 @@
             top: 5%;
             .comproTitle {
               width: 75%;
-              @include apply-at-sm-size {
+              @include apply-at-xsm-size {
+                width: 50%;
+              }
+              @include apply-at-xsm-sm-size {
                 width: 90%;
                 margin-top: 1%;
                 margin-left: 5%;
@@ -64,9 +67,13 @@
             .productCompro {
               margin-top: 5%;
               width: 60%;
-              @include apply-at-sm-size {
+              @include apply-at-xsm-sm-size {
                 width: 50%;
                 margin-top: 5%;
+              }
+              @include apply-at-xsm-size {
+                margin-top: 3%;
+                width: 40%;
               }
             }
           }
@@ -150,13 +157,21 @@
       justify-content: space-between;
       margin-top: 10%;
       margin-bottom: 10%;
-      @include apply-at-sm-size {
+      @include apply-at-xsm-sm-size {
         @include directionY;
         flex-direction: column-reverse;
         width: 100%;
         align-items: center;
         margin-top: 5%;
         margin-bottom: 5%;
+      }
+      @include apply-at-xsm-size {
+        @include directionY;
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: center;
+        margin-top: 5%;
+        margin-bottom: -15%;
       }
       .leftSection {
         width: 30%;
@@ -173,7 +188,6 @@
             width: 100%;
             position: static;
             align-items: center;
-            border: 1px solid red;
           }
           .appsDesc {
             margin-left: 20%;
@@ -185,12 +199,22 @@
             border-radius: 25px;
             left: 10%;
             z-index: 2;
-            @include apply-at-sm-size {
+            @include apply-at-xsm-size {
+              font-size: 10px;
+              margin: 0;
+              left: 10%;
+              top: 0;
+              margin-top: -15%;
+              position: relative;
+              padding: 2% 7%;
+            }
+            @include apply-at-xsm-sm-size {
               font-size: 10px;
               margin: 0;
               margin-top: 25%;
               padding: 2% 10%;
               margin-left: -50%;
+              z-index: 2;
             }
             .icon {
               width: 20%;
@@ -352,6 +376,9 @@
           .ilustrationMobile {
             img {
               width: 10%;
+              @include apply-at-xsm-size {
+                width: 8%;
+              }
             }
           }
           .descMobile {
@@ -361,6 +388,9 @@
             color: $color-dark-blue;
             text-align: center;
             margin-top: -13%;
+            @include apply-at-xsm-size {
+              margin-left: 5%;
+            }
           }
           .laptopWrapper {
             margin-top: -15%;
@@ -843,8 +873,8 @@
             align-items: center;
             font-size: 19px;
             @include apply-at-sm-size {
-              font-size: 8px;
-              line-height: 1px;
+              font-size: 6px;
+              line-height: 5px;
             }
             .title {
               margin-top: 10%;

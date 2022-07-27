@@ -257,16 +257,16 @@ const CatalogPage = () => {
       <div className={classes.mobileAppsContainer}>
         <Fade left delay={500} duration={2000}>
           <div className={classes.leftSection}>
-              <div className={classes.appDescWrapper}>
-                <div className={classes.appsDesc}>
-                  <img src={ (isMobile || width === 'sm' ) ? icon4 : icon3} className={classes.icon} alt="icon" />
-                  <p>
-                    https://www.codelabs.co.id/website_content/index/64<br/>
-                    https://www.ikatik.com/<br/>
-                    Bagi kamu yang memiliki bisnis, Jika ingin meningkatkan peluang<br/> menarik pelanggan, cobalah membuat hal ini
-                  </p>
-                </div>
+            <div className={classes.appDescWrapper}>
+              <div className={classes.appsDesc}>
+                <img src={ (isMobile || width === 'sm' ) ? icon4 : icon3} className={classes.icon} alt="icon" />
+                <p>
+                  https://www.codelabs.co.id/website_content/index/64<br/>
+                  https://www.ikatik.com/<br/>
+                  Bagi kamu yang memiliki bisnis, Jika ingin meningkatkan peluang<br/> menarik pelanggan, cobalah membuat hal ini
+                </p>
               </div>
+            </div>
           </div>
         </Fade>
         <Fade right delay={500} duration={2000}>
