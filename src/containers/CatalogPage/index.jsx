@@ -74,7 +74,7 @@ const CatalogPage = () => {
     },
     {
       name: 'contact us',
-      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658909128/catalog/Contact_usyxsa.webp'
+      imgUrl: 'https://res.cloudinary.com/dwvzfit8v/image/upload/v1658909763/catalog/Contact_eoiwov.webp'
     },
   ]
 
